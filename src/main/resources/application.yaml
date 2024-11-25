@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: kafka
+  kafka:
+    bootstrap-servers: localhost:9091
+    auto:
+      offset:
+        reset: latest
 
 kafka:
   group_id:
@@ -13,3 +18,29 @@ kafka:
     my: my-topic
   groups:
     my: my-group
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: 'health, prometheus'
+  endpoint:
+    health:
+      enable: true
+      show-details: always
+    metrics:
+      enable: true
+    prometheus:
+      enabled: true
+
+#'docker' profile only
+---
+#spring section
+spring:
+  profiles:
+    active: docker,kafka
+  application:
+    name: marakogr-kafka-test
+  kafka:
+    bootstrap-servers: kafka:19091
