@@ -3,6 +3,13 @@ spring:
     active: kafka
 
 kafka:
+  group_id:
+    prefix:
+      generation: false
   logging:
     producers:
       enabled: true
+  topics:
+    my: my-topic
+  groups:
+    my: my-group
