@@ -1,19 +1,19 @@
 package com.example.demo.kafka.cons;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.example.demo.kafka.KafkaLogUtils;
 import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.messaging.MessageHeaders;
+import org.springframework.messaging.handler.annotation.Headers;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
 @Profile("kafka")
 public class MyTopicConsumer {
 
-    private static final Logger logger = LoggerFactory.getLogger(MyTopicConsumer.class);
-
     @KafkaListener(topics = "my-topic", groupId = "test-group")
-    public void listen(String message) {
-        logger.info("Received message: " + message);
+    public void listen(@Payload String message, @Headers MessageHeaders headers) {
+        KafkaLogUtils.logReceived(message, headers, "my-topic-event");
     }
 }

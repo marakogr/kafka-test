@@ -1,3 +1,8 @@
 spring:
   profiles:
     active: kafka
+
+kafka:
+  logging:
+    producers:
+      enabled: true
