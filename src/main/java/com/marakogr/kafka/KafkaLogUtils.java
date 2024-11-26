@@ -1,4 +1,4 @@
-package com.example.demo.kafka;
+package com.marakogr.kafka;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;

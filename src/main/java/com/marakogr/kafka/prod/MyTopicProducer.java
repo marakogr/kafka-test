@@ -1,6 +1,6 @@
-package com.example.demo.kafka.prod;
+package com.marakogr.kafka.prod;
 
-import com.example.demo.kafka.ProducerCallbackAppender;
+import com.marakogr.kafka.ProducerCallbackAppender;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.core.KafkaTemplate;

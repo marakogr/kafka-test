@@ -1,7 +1,8 @@
-package com.example.demo.kafka;
+package com.marakogr.kafka;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -9,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Component("topicAndGroupProvider")
+@Profile("kafka")
 public class TopicAndGroupProvider extends KafkaPropertiesProvider {
 
     private static final String GROUP = "group";

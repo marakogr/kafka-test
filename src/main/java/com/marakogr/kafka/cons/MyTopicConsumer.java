@@ -1,6 +1,6 @@
-package com.example.demo.kafka.cons;
+package com.marakogr.kafka.cons;
 
-import com.example.demo.kafka.KafkaLogUtils;
+import com.marakogr.kafka.KafkaLogUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.annotation.KafkaListener;

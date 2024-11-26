@@ -1,23 +1,9 @@
-spring:
-  profiles:
-    active: kafka
-  kafka:
-    bootstrap-servers: localhost:9091
-    auto:
-      offset:
-        reset: latest
+server:
+  port: 8082
 
-kafka:
-  group_id:
-    prefix:
-      generation: false
-  logging:
-    producers:
-      enabled: true
-  topics:
-    my: my-topic
-  groups:
-    my: my-group
+spring:
+  application:
+    name: marakogr-kafka-test
 
 management:
   endpoints:
@@ -34,13 +20,34 @@ management:
     prometheus:
       enabled: true
 
-#'docker' profile only
+# Профиль для включенной кафки
 ---
-#spring section
 spring:
-  profiles:
-    active: docker,kafka
-  application:
-    name: marakogr-kafka-test
+  config:
+    activate:
+      on-profile: kafka
   kafka:
-    bootstrap-servers: kafka:19091
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    auto:
+      offset:
+        reset: latest
+kafka:
+  group_id:
+    prefix:
+      generation: false
+  logging:
+    producers:
+      enabled: true
+  topics:
+    my: my-topic
+  groups:
+    my: my-group
+
+# Профиль для докера
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  kafka:
+    bootstrap-servers: kafka-1:29092,kafka-2:29093,kafka-3:29094
