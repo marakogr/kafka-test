@@ -1,4 +1,4 @@
-package com.example.demo.kafka;
+package com.marakogr.kafka;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Value;

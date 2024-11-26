@@ -1,4 +1,4 @@
-package com.example.demo.kafka;
+package com.marakogr.kafka;
 
 public class KafkaConstants {
     public static final String KAFKA_LISTENERS_LOGGER_NAME = "kafka.listeners";

@@ -1,4 +1,4 @@
-package com.example.demo.config.kafka;
+package com.marakogr.config.kafka;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
